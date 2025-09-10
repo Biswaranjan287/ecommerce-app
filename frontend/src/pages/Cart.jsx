@@ -37,16 +37,16 @@ const Cart = () => {
 
     const cartItems = users.cart.map((c, index) => {
         return (
-            <li className="flex items-center justify-between mb-10 bg-gray-700 p-3 rounded" key={c.product.id}>
+            <li className="flex font-normal items-center justify-between mb-10 p-3 rounded" key={c.product.id}>
                 <img
-                    className="mr-10 w-[10vmax] h-[10vmax] object-cover"
+                    className="mr-10 w-[10vmax] h-full  "
                     src={c.product.image} alt=""
                 />
-                <span>{c.product.title}</span>
-                <span>{c.product.price}</span>
+                <span className="text-2xl">{c.product.title}</span>
+                <span className="text-2xl text-green-600">{c.product.price}</span>
                 <p>
                     <button onClick={() => DecreaseQantityHandler(index, c)} className="text-2xl">-</button>
-                    <span className="mx-3 px-3 py-[4px] bg-gray-700 rounded">{c.quantity}</span>
+                    <span className="mx-3 px-3 py-[4px] rounded">{c.quantity}</span>
                     <button onClick={() => IncreaseQantityHandler(index, c)} className="text-lg">+</button>
                 </p>
             </li>

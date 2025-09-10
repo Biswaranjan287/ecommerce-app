@@ -20,16 +20,18 @@ const ProductTemplate = ({ product }) => {
         dispatch(asyncupdateuser(copyuser.id, copyuser))
     }
     return (
-        <div className="w-[30%] mr-5 mb-5 border shadow" key={product.id} >
-            <img className="w-full h-[50vh] object-cover" src={product.image} alt="" />
-            <h1>{product.title}</h1>
+        <div className="w-[200px] mr-5 mb-10 shadow" key={product.id} >
+            <img className="w-full p-3 h-[30vh]" src={product.image} alt="" />
+            <h1 className="text-xl font-normal">{product.title}</h1>
             <small>{product.description.slice(0, 100)}..</small>
-            <div className="mt-3 flex justify-between items-center p-3">
-                <p>{product.price}</p>
-                <button onClick={() => AddtoCartHandler(product)}>Add to cart</button>
+            <div className="mt-2 flex justify-between items-center p-3">
+                <p className="font-bold text-green-600">{product.price}$</p>
+                <button 
+                className='bg-amber-400 px-3 py-1 rounded font-normal active:scale-95  hover:bg-amber-500 ease-in-out cursor-pointer'
+                onClick={() => AddtoCartHandler(product)}>Add to cart</button>
             </div>
             <Link
-                className="block m-auto w-1/2"
+                className="block m-auto w-1/2 text-blue-700 font-normal"
                 to={`/product/${product.id}`}
             > More Info
             </Link>

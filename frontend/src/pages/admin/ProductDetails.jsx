@@ -36,12 +36,16 @@ const ProductDetails = () => {
   return product ? (
     <>
       <div className='w-full flex'>
-        <img className='w-1/2 h-1/2 object-cover' src={product.image} alt="" />
-        <div className='w-1/2 h-1/2 px-5'>
+        <img className='w-[16vw] h-[40vh]' src={product.image} alt="" />
+        <div className='w-full px-25'>
           <h1 className='text-4xl'>{product.title}</h1>
           <h2 className='mb-5 text-2xl text-green-400'>{product.price}</h2>
           <p className='mb-5'>{product.description}</p>
-          <button>Add to cart</button>
+          <button
+            className='bg-amber-400 px-3 py-1 rounded font-normal active:scale-95  hover:bg-amber-500 ease-in-out cursor-pointer'
+          >
+            Add to cart
+          </button>
         </div>
       </div>
       <hr />

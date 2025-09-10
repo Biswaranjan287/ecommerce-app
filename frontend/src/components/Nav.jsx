@@ -5,7 +5,7 @@ const Nav = () => {
   const user = useSelector((state) => state.userReducer.users);
 
   return (
-    <nav className="flex font-medium  bg-blue-200 justify-center items-center mb-10 gap-x-5 p-5">
+    <nav className="flex font-medium  bg-blue-200 justify-center items-center mb-10 gap-x-10 p-5">
       <NavLink
         className={({ isActive }) =>
           `relative transition-colors duration-300 

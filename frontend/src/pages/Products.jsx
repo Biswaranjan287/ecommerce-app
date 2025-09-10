@@ -21,7 +21,7 @@ const Products = () => {
         </p>
       }
     >
-      <div className=" flex flex-wrap">
+      <div className=" flex flex-wrap justify-between">
 
         {products.map((product) => (
           <Suspense
