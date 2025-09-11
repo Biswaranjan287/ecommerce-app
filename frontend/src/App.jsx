@@ -20,7 +20,7 @@ const App = () => {
   // }, [products])
 
   return (
-    <div className="px-[10%] text-black font-thin w-screen bg-white">
+    <div className="px-[5%] text-black font-thin w-screen bg-white">
       <Nav />
       <Mainroutes />
     </div>

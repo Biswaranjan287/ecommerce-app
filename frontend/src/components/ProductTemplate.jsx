@@ -20,8 +20,8 @@ const ProductTemplate = ({ product }) => {
         dispatch(asyncupdateuser(copyuser.id, copyuser))
     }
     return (
-        <div className="w-[200px] mr-5 mb-10 shadow" key={product.id} >
-            <img className="w-full p-3 h-[30vh]" src={product.image} alt="" />
+        <div className="w-[200px] mr-5 mb-10 shadow rounded overflow-hidden group" key={product.id} >
+            <img className="w-full p-3 h-[30vh] rounded-md transition-transform duration-300 group-hover:scale-110" src={product.image} alt="" />
             <h1 className="text-xl font-normal">{product.title}</h1>
             <small>{product.description.slice(0, 100)}..</small>
             <div className="mt-2 flex justify-between items-center p-3">
