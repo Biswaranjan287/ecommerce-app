@@ -34,25 +34,26 @@ const ProductDetails = () => {
   }
 
   return product ? (
-    <>
-      <div className='w-full flex'>
+    <div className='flex'>
+      <div className='w-[60vw] h-fit flex items-center px-5 bg-rose-100'>
         <img className='w-[16vw] h-[40vh]' src={product.image} alt="" />
-        <div className='w-full px-25'>
+        <div className='w-full h-full py-20 px-5 flex flex-col items-start'>
           <h1 className='text-4xl'>{product.title}</h1>
-          <h2 className='mb-5 text-2xl text-green-400'>{product.price}</h2>
+          <h2 className='mb-5 mt-5 text-2xl text-green-500 font-normal'>{product.price}</h2>
           <p className='mb-5'>{product.description}</p>
           <button
-            className='bg-amber-400 px-3 py-1 rounded font-normal active:scale-95  hover:bg-amber-500 ease-in-out cursor-pointer'
+            className='bg-amber-400 px-3 py-1 mt-10 rounded font-normal active:scale-95  hover:bg-amber-500 ease-in-out cursor-pointer'
           >
             Add to cart
           </button>
         </div>
       </div>
-      <hr />
+      <hr className='m-5'/>
       {users && users?.isAdmin &&
-        <form
+        <div className='bg-rose-100 p-10'>
+          <form
           onSubmit={handleSubmit(UpdateProductHandler)}
-          className="flex flex-col w-full justify-start items-start">
+          className="flex flex-col w-full justify-center items-center ">
           <input
             {...register("image")}
             className="outline-none border-b text-3xl mb-3 p-2"
@@ -73,7 +74,7 @@ const ProductDetails = () => {
           />
           <textarea
             {...register("description")}
-            className="outline-none border-b text-3xl mb-3 p-2"
+            className="outline-none resize-none w-full overflow-auto border-b text-3xl mb-3 p-2"
             placeholder="enter description"
           ></textarea>
           <input
@@ -82,18 +83,19 @@ const ProductDetails = () => {
             type="text"
             placeholder="category"
           />
-          <button className="mt-5 px-4 py-2 rounded bg-blue-500">
+          <button className="mt-5 px-4 py-2 rounded font-normal bg-blue-300">
             Update Product
           </button>
           <button type='button'
             onClick={DeleteHandler}
-            className='mt-5 px-4 py-2 bg-red-500 rounded'>
+            className='mt-5 px-4 py-2 bg-red-400 font-normal rounded'>
             Delete Product
           </button>
         </form>
+        </div>
       }
 
-    </>
+    </div>
   ) : "Loading..."
 }
 

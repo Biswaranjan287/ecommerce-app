@@ -27,7 +27,7 @@ const Cart = () => {
                 ...copyuser.cart[index],
                 quantity: copyuser.cart[index].quantity - 1,
             }
-        }else{
+        } else {
             copyuser.cart.splice(index, 1)
         }
         console.log(copyuser)
@@ -37,19 +37,21 @@ const Cart = () => {
 
     const cartItems = users.cart.map((c, index) => {
         return (
-            <li className="flex font-normal items-center justify-between mb-10 p-3 rounded" key={c.product.id}>
-                <img
-                    className="mr-10 w-[10vmax] h-full  "
-                    src={c.product.image} alt=""
-                />
-                <span className="text-2xl">{c.product.title}</span>
-                <span className="text-2xl text-green-600">{c.product.price}</span>
-                <p>
-                    <button onClick={() => DecreaseQantityHandler(index, c)} className="text-2xl">-</button>
-                    <span className="mx-3 px-3 py-[4px] rounded">{c.quantity}</span>
-                    <button onClick={() => IncreaseQantityHandler(index, c)} className="text-lg">+</button>
-                </p>
-            </li>
+            <div className="flex justify-center">
+                <li className="flex w-[80vw] bg-rose-100 font-normal items-center justify-between mb-10 p-3 rounded-2xl" key={c.product.id}>
+                    <img
+                        className="mr-10 w-[10vmax] h-full  "
+                        src={c.product.image} alt=""
+                    />
+                    <span className="text-2xl">{c.product.title}</span>
+                    <span className="text-2xl text-green-600">{c.product.price}</span>
+                    <p>
+                        <button onClick={() => DecreaseQantityHandler(index, c)} className="text-2xl">-</button>
+                        <span className="mx-3 px-3 py-[4px] font-medium rounded">{c.quantity}</span>
+                        <button onClick={() => IncreaseQantityHandler(index, c)} className="text-lg">+</button>
+                    </p>
+                </li>
+            </div>
         )
     })
 

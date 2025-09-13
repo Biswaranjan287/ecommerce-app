@@ -32,12 +32,11 @@ const UserProfile = () => {
 
   return users ? (
     <div>
-      <h1 className="font-thin text-5xl text-gray-500">{users.username}</h1>
-      <h1 className="font-thin text-xl text-gray-500">{users.email}</h1>
-      <hr className="my-10"/>
-      <form
+      
+      <div className="w-flull flex justify-center items-center">
+        <form
         onSubmit={handleSubmit(UpdateUserHandler)}
-        className="flex flex-col w-full justify-start items-start">
+        className="flex flex-col bg-rose-100 p-20 rounded-2xl">
         <input
           {...register("username")}
           className="outline-none border-b text-3xl mb-3 p-2"
@@ -56,22 +55,26 @@ const UserProfile = () => {
           type="password"
           placeholder="password"
         />
-        <button className="mt-5 px-4 py-2 rounded bg-blue-500">
+        <button className="mt-5 px-4 py-2 rounded font-normal bg-blue-300">
           Update User
         </button>
 
         <button type='button'
           onClick={LogoutUserHandler}
-          className='mt-5 px-4 py-2 bg-red-400 rounded'>
+          className='mt-5 px-4 py-2 font-normal bg-orange-300 rounded'>
           Logout User
         </button>
 
         <button type='button'
           onClick={DeleteHandler}
-          className='mt-5 px-4 py-2 bg-red-500 rounded'>
+          className='mt-5 px-4 py-2 font-normal bg-red-400 rounded'>
           Delete User
         </button>
       </form>
+      </div>
+      <hr className="my-5"/>
+      <h1 className="font-thin text-5xl text-gray-500">{users.username}</h1>
+      <h1 className="font-thin text-xl text-gray-500">{users.email}</h1>
     </div>
   ) : "Loading..."
 }

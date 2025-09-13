@@ -17,9 +17,10 @@ const CreateProduct = () => {
     }
 
     return (
-        <form
+        <div className='flex justify-center'>
+            <form
             onSubmit={handleSubmit(CreateProductHandler)}
-            className="flex flex-col w-1/2 justify-start items-start">
+            className="flex justify-between bg-rose-100 flex-col w-1/2 h-[70vh] p-10 rounded-2xl">
             <input
                 {...register("image")}
                 className="outline-none border-b text-3xl mb-3 p-2"
@@ -51,6 +52,7 @@ const CreateProduct = () => {
             />
             <button className="mt-5 px-4 py-2 rounded bg-blue-500">Create Product</button>
         </form>
+        </div>
     )
 }
 
