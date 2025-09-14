@@ -34,9 +34,9 @@ const ProductDetails = () => {
   }
 
   return product ? (
-    <div className='flex'>
-      <div className='w-[60vw] h-fit flex items-center px-5 bg-rose-100'>
-        <img className='w-[16vw] h-[40vh]' src={product.image} alt="" />
+    <div className='flex bg-rose-100 rounded-2xl'>
+      <img className='w-[16vw] h-[40vh] top-0 ml-4 mt-10' src={product.image} alt="" />
+      <div className='w-[60vw]  flex items-center px-5 '>
         <div className='w-full h-full py-20 px-5 flex flex-col items-start'>
           <h1 className='text-4xl'>{product.title}</h1>
           <h2 className='mb-5 mt-5 text-2xl text-green-500 font-normal'>{product.price}</h2>
@@ -48,50 +48,50 @@ const ProductDetails = () => {
           </button>
         </div>
       </div>
-      <hr className='m-5'/>
+      <hr className='m-5' />
       {users && users?.isAdmin &&
-        <div className='bg-rose-100 p-10'>
+        <div className='bg-rose-100 p-10 rounded-2xl'>
           <form
-          onSubmit={handleSubmit(UpdateProductHandler)}
-          className="flex flex-col w-full justify-center items-center ">
-          <input
-            {...register("image")}
-            className="outline-none border-b text-3xl mb-3 p-2"
-            type="url"
-            placeholder="image url"
-          />
-          <input
-            {...register("title")}
-            className="outline-none border-b text-3xl mb-3 p-2"
-            type="text"
-            placeholder="title"
-          />
-          <input
-            {...register("price")}
-            className="outline-none border-b text-3xl mb-3 p-2"
-            type="number"
-            placeholder="price"
-          />
-          <textarea
-            {...register("description")}
-            className="outline-none resize-none w-full overflow-auto border-b text-3xl mb-3 p-2"
-            placeholder="enter description"
-          ></textarea>
-          <input
-            {...register("category")}
-            className="outline-none border-b text-3xl mb-3 p-2"
-            type="text"
-            placeholder="category"
-          />
-          <button className="mt-5 px-4 py-2 rounded font-normal bg-blue-300">
-            Update Product
-          </button>
-          <button type='button'
-            onClick={DeleteHandler}
-            className='mt-5 px-4 py-2 bg-red-400 font-normal rounded'>
-            Delete Product
-          </button>
-        </form>
+            onSubmit={handleSubmit(UpdateProductHandler)}
+            className="flex flex-col w-full justify-center items-center ">
+            <input
+              {...register("image")}
+              className="outline-none border-b text-3xl mb-3 p-2"
+              type="url"
+              placeholder="image url"
+            />
+            <input
+              {...register("title")}
+              className="outline-none border-b text-3xl mb-3 p-2"
+              type="text"
+              placeholder="title"
+            />
+            <input
+              {...register("price")}
+              className="outline-none border-b text-3xl mb-3 p-2"
+              type="number"
+              placeholder="price"
+            />
+            <textarea
+              {...register("description")}
+              className="outline-none resize-none w-full overflow-auto border-b text-3xl mb-3 p-2"
+              placeholder="enter description"
+            ></textarea>
+            <input
+              {...register("category")}
+              className="outline-none border-b text-3xl mb-3 p-2"
+              type="text"
+              placeholder="category"
+            />
+            <button className="mt-5 px-4 py-2 rounded font-normal bg-blue-300">
+              Update Product
+            </button>
+            <button type='button'
+              onClick={DeleteHandler}
+              className='mt-5 px-4 py-2 bg-red-400 font-normal rounded'>
+              Delete Product
+            </button>
+          </form>
         </div>
       }
 
