@@ -20,7 +20,7 @@ const ProductDetails = () => {
       category: product?.category,
       description: product?.description,
     },
-  })
+  }) 
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
